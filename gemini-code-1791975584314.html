@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đề Thi Thử Giữa Học Kỳ I Khối 6 (40 Câu) - Ms Lê Hằng English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-purple: #7952B3;
+      --primary-coral: #FF5E62;
+      --primary-yellow: #FFD166;
+      --primary-cyan: #06D6A0;
+      --accent-blue: #0984E3;
+      --correct-green: #00BA66;
+      --correct-bg: #E8F8F0;
+      --wrong-red: #FA5252;
+      --wrong-bg: #FFEAEA;
+      --card-bg: #FFFFFF;
+      --text-main: #2D3436;
+      --text-muted: #636E72;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #FFEFBA 0%, #FFDFBA 8%, #E3F2FD 35%, #CBE3F7 70%, #A0C4E2 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-main);
+      padding-bottom: 120px;
+    }
+
+    .city-skyline {
+      position: fixed;
+      bottom: 45px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.32;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 400px 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' width='400' height='120'%3E%3Cpath fill='%236C8EB5' d='M0,120 L0,60 L20,60 L20,30 L50,30 L50,120 L70,120 L70,45 L100,45 L100,120 L130,120 L130,15 L160,15 L160,120 L190,120 L190,50 L220,50 L220,120 L250,120 L250,25 L280,25 L280,120 L310,120 L310,40 L340,40 L340,120 L370,120 L370,55 L400,55 L400,120 Z'/%3E%3C/svg%3E");
+    }
+
+    .bottom-road {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 46px;
+      background: #4A4A4A;
+      border-top: 6px solid #00BA66;
+      z-index: 1;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    }
+    .road-curb {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FF4757 0px, #FF4757 24px, #FFFFFF 24px, #FFFFFF 48px);
+    }
+    .road-lines {
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FFFFFF 0px, #FFFFFF 35px, transparent 35px, transparent 70px);
+      opacity: 0.85;
+    }
+
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .floating-cloud {
+      position: absolute;
+      opacity: 0.45;
+      animation: floatCloud 25s linear infinite;
+    }
+    @keyframes floatCloud {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(110vw); }
+    }
+
+    .app-container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 14px;
+    }
+
+    .top-announcement {
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
+      border: 1.5px solid #FFDEE9;
+    }
+    .announcement-text {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .teacher-badge {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      color: #FFF;
+      padding: 3px 12px;
+      border-radius: 18px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+    }
+
+    .unit-hero-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(116, 185, 255, 0.18);
+      border: 2px solid #E3F2FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(90deg, #FF5E62, #7952B3);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .unit-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #2D3436;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .unit-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #636E72;
+    }
+    .unit-icon-box {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #FFF0F5, #FFF9C4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 2px solid #FFFFFF;
+    }
+
+    .top-stats-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border: 2px solid #FFF0F5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .pill-counter-left {
+      background: #FF5E62;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #D63031;
+    }
+    .bar-track {
+      flex: 1;
+      height: 16px;
+      background: #EBF3FA;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #E1EDF8;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FDCB6E, #00D26A);
+      border-radius: 10px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pill-counter-right {
+      background: #00D26A;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    .warning-box {
+      background: #FFF9E6;
+      border: 3px dashed #FDCB6E;
+      border-left: 8px solid #F39C12;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(243, 156, 18, 0.12);
+    }
+    .warning-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #D35400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .warning-text {
+      font-size: 0.95rem;
+      color: #4A3E1F;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+    .warning-subtext {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: #C0392B;
+      font-weight: 800;
+    }
+
+    .reading-passage-card {
+      background: #FFFDF8;
+      border: 3px solid #FDCB6E;
+      border-radius: 26px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(253, 203, 110, 0.25);
+      position: relative;
+    }
+    .passage-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #F1C40F;
+    }
+    .passage-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #D35400;
+    }
+    .passage-scope-badge {
+      background: #F39C12;
+      color: #FFF;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 14px;
+      box-shadow: 0 2px 0 #D35400;
+    }
+    .passage-intro-text {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #4B4B4B;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .passage-blank {
+      display: inline-block;
+      min-width: 68px;
+      padding: 1px 8px;
+      margin: 0 4px;
+      background: #FFF3CD;
+      border: 1.5px dashed #F39C12;
+      border-radius: 8px;
+      font-weight: 900;
+      color: #D35400;
+      text-align: center;
+    }
+    .passage-prompt-banner {
+      margin-top: 16px;
+      background: linear-gradient(90deg, #0984E3, #00CEC9);
+      color: #FFF;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-toggle-passage {
+      background: #EDF2F7;
+      color: #2B6CB0;
+      border: 1.5px solid #CBD5E0;
+      border-radius: 12px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+    .btn-toggle-passage:hover {
+      background: #E2E8F0;
+      border-color: #0984E3;
+      color: #0984E3;
+    }
+    .collapse-passage-box {
+      display: none;
+      background: #FFFDF9;
+      border: 2px dashed #CBD5E0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .quiz-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 3px solid #F0F4F8;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .quiz-card:hover {
+      box-shadow: 0 14px 38px rgba(116, 185, 255, 0.2);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .q-number-pill {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 3px 0 #0767B1;
+    }
+    .q-tag-pill {
+      background: #FFF3E0;
+      color: #E65100;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: 1px solid #FFE0B2;
+    }
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #2D3436;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+    .q-text u, .opt-text u {
+      color: #FF3838;
+      font-weight: 900;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 600px) {
+      .options-grid.grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .option-btn {
+      position: relative;
+      background: #FFFFFF;
+      border: 2.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D3436;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 5px 0 #CBD5E1;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.015);
+      border-color: #0984E3;
+      box-shadow: 0 7px 0 #0767B1;
+      background: #F8FBFE;
+    }
+    .option-btn:active:not(:disabled) {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #CBD5E1;
+    }
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #F1F2F6;
+      color: #57606F;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .option-btn.selected-correct {
+      background: #E8F8F0 !important;
+      border-color: var(--correct-green) !important;
+      color: #0E6251 !important;
+      box-shadow: 0 5px 0 #00A853 !important;
+    }
+    .option-btn.selected-correct .opt-key {
+      background: var(--correct-green) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.selected-wrong {
+      background: #FFEAEA !important;
+      border-color: var(--wrong-red) !important;
+      color: #922B21 !important;
+      box-shadow: 0 5px 0 #D63031 !important;
+      animation: shakeAnim 0.4s ease-in-out;
+    }
+    .option-btn.selected-wrong .opt-key {
+      background: var(--wrong-red) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.show-truth {
+      border-color: var(--correct-green) !important;
+      background: #F0FFF4 !important;
+      box-shadow: 0 4px 0 #00A853 !important;
+    }
+    .option-btn.show-truth .opt-key {
+      background: #00BA66 !important;
+      color: #FFF !important;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    .explanation-container {
+      display: none;
+      margin-top: 20px;
+      background: #FFFFFF;
+      border: 2px dashed #FFB8B8;
+      border-radius: 22px;
+      padding: 20px;
+      position: relative;
+      animation: slideInDown 0.35s ease;
+      box-shadow: 0 6px 20px rgba(255, 94, 98, 0.08);
+    }
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FF5E62;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .exp-trans-box {
+      background: #FFFDF0;
+      border-left: 6px solid #FDCB6E;
+      border-radius: 16px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D3436;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .exp-section-title {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #2D3436;
+      margin-bottom: 10px;
+    }
+
+    .exp-grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 620px) {
+      .exp-grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .exp-card-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+    .exp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .card-word { font-weight: 800; font-size: 1rem; }
+    .card-word.word-wrong { color: #0984E3; }
+    .card-word.word-correct { color: #00BA66; }
+
+    .badge-pill {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+    .badge-pill-wrong { background: #F1F2F6; color: #57606F; }
+    .badge-pill-correct { background: #E8F8F0; color: #00A853; border: 1px solid #A3E9C3; }
+    .card-meaning { color: #B33939; font-weight: 700; font-size: 0.88rem; }
+
+    .exp-block {
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .rule-tag {
+      background: #FFF3CD;
+      color: #856404;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-right: 6px;
+      display: inline-block;
+    }
+    .highlight-green-tag {
+      background: #D4EDDA;
+      color: #155724;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .wrong-key-pill {
+      background: #FFEAEA;
+      color: #D63031;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    .submit-area {
+      text-align: center;
+      margin: 35px 0 60px 0;
+    }
+    .btn-submit-main {
+      background: #00D26A;
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      font-weight: 900;
+      padding: 16px 48px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #00A853, 0 14px 25px rgba(0, 210, 106, 0.4);
+      transition: all 0.15s ease;
+    }
+    .btn-submit-main:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 11px 0 #00A853, 0 18px 30px rgba(0, 210, 106, 0.45);
+    }
+    .btn-submit-main:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 52, 54, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .score-modal {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      border: 4px solid #0984E3;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .modal-trophy { font-size: 4rem; margin-bottom: 10px; }
+    .score-huge { font-size: 3.2rem; font-weight: 900; color: #0984E3; margin: 10px 0; line-height: 1; }
+    .score-fraction { font-size: 1.2rem; color: #636E72; font-weight: 800; }
+    .feedback-box {
+      background: #F8F9FE;
+      border: 2px dashed #0984E3;
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .feedback-teacher {
+      font-weight: 900;
+      color: #0984E3;
+      margin-bottom: 8px;
+    }
+    .feedback-quote {
+      font-size: 1.02rem;
+      color: #2D3436;
+      line-height: 1.55;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .btn-modal-close {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 14px 34px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0767B1;
+      margin: 6px;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .app-container { padding: 10px; }
+      .quiz-card { padding: 18px 14px; }
+      .q-text { font-size: 1.05rem; }
+      .option-btn { font-size: 0.95rem; padding: 12px 14px; }
+      .btn-submit-main { font-size: 1.1rem; padding: 14px 32px; }
+      .unit-title { font-size: 1.3rem; }
+      .reading-passage-card { padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="bg-elements" id="bgElements"></div>
+  <div class="city-skyline"></div>
+  <div class="bottom-road">
+    <div class="road-curb"></div>
+    <div class="road-lines"></div>
+  </div>
+
+  <div class="app-container">
+
+    <div class="top-announcement">
+      <div class="announcement-text">
+        <span>👩‍🏫 Giáo viên tạo: <strong>Ms Lê Hằng English</strong></span>
+        <span class="teacher-badge">Master of English</span>
+      </div>
+      <div style="font-size: 0.82rem; color: #FF5E62; font-weight: 800;">
+        ⚡ ĐỀ THI THỬ GIỮA HỌC KỲ I KHỐI 6 (40 CÂU)
+      </div>
+    </div>
+
+    <div class="unit-hero-card">
+      <div>
+        <div class="unit-badge">
+          <span>🎒 GRADE 6 · MID-TERM 1 PRACTICE TEST (UNITS 1 - 3)</span>
+        </div>
+        <h1 class="unit-title">Đề Thi Thử Giữa Học Kỳ I Khối 6 (40 Câu)</h1>
+        <div class="unit-subtitle">
+          My New School · My House · My Friends · Đầy đủ 11 dạng bài chuẩn Sư phạm
+        </div>
+      </div>
+      <div class="unit-icon-box">
+        🐼
+      </div>
+    </div>
+
+    <div class="top-stats-bar">
+      <div class="pill-counter-left">
+        <span>⭐</span>
+        <span id="correctScore">0</span><span>/40</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progressBar"></div>
+      </div>
+      <div class="pill-counter-right">
+        <span id="answeredCount">0</span><span>/40</span>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-title">
+        <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+      </div>
+      <div class="warning-text">
+        Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên.
+      </div>
+      <div class="warning-subtext">
+        👉 Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!<br>
+        👇 <strong>Kéo tới đâu, làm tới đó! *</strong>
+      </div>
+    </div>
+
+    <div id="quizContainer"></div>
+
+    <div class="submit-area">
+      <button class="btn-submit-main" onclick="calculateAndShowResult()">
+        🎉 NỘP BÀI & XEM TỔNG KẾT 🎉
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Score Modal Popup -->
+  <div class="modal-overlay" id="scoreModal">
+    <div class="score-modal">
+      <div class="modal-trophy" id="modalTrophy">🏆</div>
+      <h2 style="color: #2D3436; font-size: 1.5rem; font-weight: 900;">KẾT QUẢ BÀI THI</h2>
+      <div class="score-huge" id="modalPercent">100%</div>
+      <div class="score-fraction" id="modalFraction">Đúng 40 / 40 câu</div>
+
+      <div class="feedback-box">
+        <div class="feedback-teacher">
+          <span>👩‍🏫 Lời nhận xét từ <strong>Ms Lê Hằng English</strong>:</span>
+        </div>
+        <div class="feedback-quote" id="modalTeacherQuote">
+          "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!"
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-modal-close" onclick="closeModal()">Đóng & Xem lại bài</button>
+        <button class="btn-modal-close" style="background: #00C9A7; box-shadow: 0 5px 0 #009688;" onclick="restartQuiz()">Làm lại bài thi 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playDing() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'triangle';
+      osc1.frequency.setValueAtTime(659.25, now);
+      gain1.gain.setValueAtTime(0.25, now);
+      gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.35);
+
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(987.77, now + 0.1);
+      gain2.gain.setValueAtTime(0.3, now + 0.1);
+      gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.start(now + 0.1);
+      osc2.stop(now + 0.6);
+    }
+
+    function playWrongSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      [320, 260, 210].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now + i * 0.14);
+        gain.gain.setValueAtTime(0.2, now + i * 0.14);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i + 1) * 0.14);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.14);
+        osc.stop(now + (i + 1) * 0.14);
+      });
+    }
+
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+    let isAnimatingConfetti = false;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 65) {
+      const colors = ['#0984E3', '#FDCB6E', '#00C9A7', '#00D26A', '#FF4757', '#FF9FF3', '#6C5CE7'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 320,
+          y: window.innerHeight * 0.35 + (Math.random() - 0.5) * 100,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 14,
+          vy: Math.random() * -12 - 5,
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+      if (!isAnimatingConfetti) animateConfetti();
+    }
+
+    function animateConfetti() {
+      if (confettiParticles.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isAnimatingConfetti = false;
+        return;
+      }
+      isAnimatingConfetti = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rot += p.rotSpeed;
+        p.opacity -= 0.012;
+        if (p.opacity <= 0 || p.y > window.innerHeight) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    function initBackgroundElements() {
+      const container = document.getElementById('bgElements');
+      const cloudSvg = '<svg width="120" height="70" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+      for (let i = 0; i < 4; i++) {
+        const cloud = document.createElement('div');
+        cloud.className = 'floating-cloud';
+        cloud.style.top = `${12 + i * 20}%`;
+        cloud.style.animationDuration = `${24 + i * 8}s`;
+        cloud.style.animationDelay = `${i * 6}s`;
+        cloud.innerHTML = cloudSvg;
+        container.appendChild(cloud);
+      }
+    }
+
+    /* DATA: PASSAGES & 40 QUESTIONS */
+    const passagesData = {
+      "an_son_school": {
+        "title": "V. TEXT INSERTION: AN SON LOWER SECONDARY SCHOOL",
+        "badge": "ĐIỀN CÂU VÀO ĐOẠN VĂN (CÂU 15 - 18)",
+        "intro": "Four sentences have been removed from the text below. Choose the letter A, B, C or D that best fits each numbered blank from 15 to 18:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.88; font-size: 1.05rem; text-align: justify; color: #2D3436;\"><div style=\"background: #FFF9E6; border: 1.5px dashed #FDCB6E; border-radius: 12px; padding: 12px 16px; font-weight: 700; line-height: 1.65; margin-bottom: 14px;\"><div style=\"color: #D35400; margin-bottom: 6px;\">📋 Danh sách 4 câu văn cần điền (Options A, B, C, D):</div><div><b>A.</b> They are very friendly and always help each other with difficult homework.</div><div><b>B.</b> My new school is called An Son Lower Secondary School.</div><div><b>C.</b> After school, we usually play football or badminton in the playground.</div><div><b>D.</b> There is a big library with thousands of interesting storybooks.</div></div><p><span class=\"passage-blank\">(15) ______</span>. It is located in a quiet village surrounded by green rice fields. The school has 12 classrooms, a modern computer room, and a large garden. <span class=\"passage-blank\">(16) ______</span>. I often go there during break time to read my favorite comic books. My classmates come from different hamlets in the commune. <span class=\"passage-blank\">(17) ______</span>. Teachers at my school are kind and dedicated. <span class=\"passage-blank\">(18) ______</span>. I love my school very much because every school day is a happy day.</p></div>"
+      },
+      "peter_house": {
+        "title": "VIII. GUIDED CLOZE READING: PETER'S COUNTRY HOUSE",
+        "badge": "ĐỌC ĐIỀN ĐOẠN VĂN (CÂU 23 - 27)",
+        "intro": "Read the passage and choose the correct answer A, B, C or D for each blank from 23 to 27:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.88; font-size: 1.05rem; text-align: justify; color: #2D3436;\"><p>My name is Peter and I live in a cozy country house with my family. Our house <span class=\"passage-blank\">(23) ______</span> a small garden in front and a backyard with big trees. Inside, there are five rooms: a living room, two bedrooms, a kitchen, and a bathroom. My favorite room is my bedroom because it is very comfortable. I have a bed, a desk, a chair, and a bookshelf <span class=\"passage-blank\">(24) ______</span> my bed. On the desk, there is a lamp and my laptop. I usually do my homework <span class=\"passage-blank\">(25) ______</span> the evening before going to bed. Right now, my mother is in the kitchen. She <span class=\"passage-blank\">(26) ______</span> delicious dinner for the whole family. My father is in the living room reading a newspaper. We always have dinner together at 7:00 p.m. I feel very happy and <span class=\"passage-blank\">(27) ______</span> to live in such a warm house.</p></div>"
+      },
+      "greenwood_school": {
+        "title": "IX. READING COMPREHENSION: GREENWOOD BOARDING SCHOOL",
+        "badge": "ĐỌC HIỂU ĐOẠN VĂN (CÂU 28 - 32)",
+        "intro": "Read the passage and choose the best answer A, B, C or D for each question from 28 to 32:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.88; font-size: 1.05rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 10px;\"><b>[Paragraph 1]</b> Greenwood International Boarding School is a special school for students aged 11 to 16. It is situated in the countryside near London, surrounded by beautiful hills and forests. Because it is a boarding school, students study, eat, and live together in clean dormitories during the weekdays.</p><p style=\"margin-bottom: 10px;\"><b>[Paragraph 2]</b> A typical day at Greenwood begins at 6:30 a.m. Students do morning exercise, have breakfast in the canteen, and start their lessons at 8:00 a.m. They study core subjects such as Maths, Science, English, and History. In the afternoon, students participate in creative arts, music, or sports clubs such as football, swimming, and basketball. The classrooms are modern and <b style=\"color: #D35400; background: #FFF3CD; padding: 1px 6px; border-radius: 6px;\">bright</b> with smartboards, air-conditioners, and computers.</p><p><b>[Paragraph 3]</b> My best friend, Tom, is a student at Greenwood. He is tall and slim with short blonde hair and bright blue eyes. Tom is very active and hard-working. He loves playing football for the school team and always helps his classmates when they face difficult exercises. He says that living at a boarding school helps him become more independent and confident.</p></div>"
+      }
+    };
+
+    function makeQ(id, tag, qText, opts, cor, trans, rule, whyCor, notes, subtext = "", passage_key = "", is_first_in_passage = "") {
+      const keys = ["A", "B", "C", "D"];
+      const options = opts.map((t, idx) => ({ key: keys[idx], text: t }));
+      const analysis = opts.map((t, idx) => ({
+        word: `${keys[idx]}. ${t.replace(/<[^>]*>/g, '').slice(0, 38)}`,
+        badge: keys[idx] === cor ? "Đáp án chuẩn" : "Phương án nhiễu",
+        badgeType: keys[idx] === cor ? "correct" : "wrong",
+        note: notes[idx]
+      }));
+      const whyWrong = [];
+      opts.forEach((t, idx) => {
+        if (keys[idx] !== cor) {
+          whyWrong.push({
+            word: `${keys[idx]}. ${t.replace(/<[^>]*>/g, '').slice(0, 34)}`,
+            reason: notes[idx]
+          });
+        }
+      });
+      return { id, type: tag, question: qText, subtext, options, correct: cor, trans, analysis, whyCorrect: { rule, content: whyCor }, whyWrong, passage_key, is_first_in_passage };
+    }
+
+    const quizData = [
+      /* ==================== I. PRONUNCIATION (CÂU 1 - 2) ==================== */
+      makeQ(1, "I. PRONUNCIATION - Đuôi -s/-es", "Question 1: Choose the word A, B, C or D whose underlined part is pronounced differently from the others.", ["play<u>s</u>", "apple<u>s</u>", "book<u>s</u>", "room<u>s</u>"], "C", "Dịch: Chọn từ có phần gạch chân đuôi '-s' phát âm khác với ba từ còn lại.", "Quy tắc phát âm đuôi -s/-es:", "Từ <span class='highlight-green-tag'>books</span> (/bʊks/) kết thúc bằng phụ âm vô thanh <b>/k/</b> nên đuôi -s phát âm là <b>/s/</b>. Ba từ còn lại 'plays' (/pleɪz/), 'apples' (/ˈæplz/), 'rooms' (/ruːmz/) kết thúc bằng nguyên âm và phụ âm hữu thanh nên đuôi -s đều phát âm là <b>/z/</b>.", ["/pleɪz/ - tận cùng là nguyên âm đôi /eɪ/ → phát âm là /z/", "/ˈæplz/ - tận cùng là âm hữu thanh /l/ → phát âm là /z/", "/bʊks/ - tận cùng là âm vô thanh /k/ → phát âm là /s/", "/ruːmz/ - tận cùng là âm hữu thanh /m/ → phát âm là /z/"], "A. play<u>s</u> &nbsp;&nbsp;&nbsp; B. apple<u>s</u> &nbsp;&nbsp;&nbsp; C. book<u>s</u> &nbsp;&nbsp;&nbsp; D. room<u>s</u>"),
+      makeQ(2, "I. PRONUNCIATION - Nguyên âm 'a'", "Question 2: Choose the word A, B, C or D whose underlined part is pronounced differently from the others.", ["f<u>a</u>st", "p<u>a</u>rk", "cl<u>a</u>ss", "h<u>a</u>ve"], "D", "Dịch: Chọn từ có phần gạch chân chữ 'a' phát âm khác với ba từ còn lại.", "Phân biệt âm /æ/ và /ɑː/ (Unit 1 Lớp 6):", "Từ <span class='highlight-green-tag'>have</span> (/hæv/) có chữ 'a' phát âm là nguyên âm bẹt ngắn <b>/æ/</b>. Ba từ còn lại 'fast' (/fɑːst/), 'park' (/pɑːk/), 'class' (/klɑːs/) đều phát âm là âm <b>/ɑː/</b> dài.", ["/fɑːst/ (nhanh) - phát âm là /ɑː/", "/pɑːk/ (công viên) - phát âm là /ɑː/", "/klɑːs/ (lớp học) - phát âm là /ɑː/", "/hæv/ (có) - phát âm là /æ/"], "A. f<u>a</u>st &nbsp;&nbsp;&nbsp; B. p<u>a</u>rk &nbsp;&nbsp;&nbsp; C. cl<u>a</u>ss &nbsp;&nbsp;&nbsp; D. h<u>a</u>ve"),
+
+      /* ==================== II. MULTIPLE CHOICE (CÂU 3 - 10) ==================== */
+      makeQ(3, "II. MULTIPLE CHOICE - Collocations (Play / Do / Have / Study)", "Question 3: My brother and I usually ______ judo in the gym on Saturday mornings.", ["play", "do", "study", "have"], "B", "Dịch: Anh trai tôi và tôi thường tập võ judo trong phòng tập vào các buổi sáng thứ Bảy.", "Quy tắc kết hợp động từ với môn võ thuật:", "Các môn võ thuật và thể dục cá nhân (<i>judo, karate, aerobics, yoga</i>) luôn đi với động từ <span class='highlight-green-tag'>do</span> (<i>do judo</i>).", ["play đi với các môn thể thao có bóng (play football, play badminton)", "do judo: tập võ judo", "study đi với các môn học (study Maths, study English)", "have đi với bữa ăn hoặc tiết học (have lunch, have lessons)"]),
+      makeQ(4, "II. MULTIPLE CHOICE - Types of House (Unit 2)", "Question 4: We live in a modern ______ on the fifth floor of a big building in the city center.", ["town house", "country house", "flat", "villa"], "C", "Dịch: Chúng tôi sống trong một căn hộ chung cư hiện đại ở tầng 5 của một tòa nhà lớn ngay trung tâm thành phố.", "Từ vựng chỉ các loại nhà ở (Types of house):", "Nhà ở nằm trên **tầng 5 của một tòa nhà lớn** (<i>on the fifth floor of a big building</i>) chính là căn hộ chung cư: <span class='highlight-green-tag'>flat</span> (= apartment).", ["town house: nhà phố mặt đất", "country house: nhà ở miền quê", "flat: căn hộ chung cư (nằm trên các tầng của tòa nhà lớn)", "villa: biệt thự sân vườn"]),
+      makeQ(5, "II. MULTIPLE CHOICE - Present Continuous", "Question 5: Look! The students ______ games in the school yard.", ["play", "plays", "is playing", "are playing"], "D", "Dịch: Nhìn kìa! Các bạn học sinh đang chơi trò chơi ở ngoài sân trường.", "Thì Hiện tại tiếp diễn với dấu hiệu 'Look!':", "Đầu câu có động từ cảm thán <b>Look!</b> (Nhìn kìa!) báo hiệu hành động đang diễn ra ngay lúc nói. Chủ ngữ <b>The students</b> là danh từ số nhiều nên chia: <span class='highlight-green-tag'>are playing</span>.", ["play: hiện tại đơn", "plays: hiện tại đơn ngôi thứ 3 số ít", "is playing: sai vì The students là số nhiều", "are playing: chuẩn Hiện tại tiếp diễn với chủ ngữ số nhiều"]),
+      makeQ(6, "II. MULTIPLE CHOICE - Personality Adjectives (Unit 3)", "Question 6: Lan is very ______. She always draws beautiful pictures and comes up with new ideas in art class.", ["creative", "friendly", "talkative", "patient"], "A", "Dịch: Lan rất sáng tạo. Bạn ấy luôn vẽ những bức tranh đẹp và nảy ra những ý tưởng mới trong giờ Mỹ thuật.", "Tính từ chỉ tính cách (Personality):", "Người luôn vẽ tranh đẹp và nghĩ ra nhiều ý tưởng mới (<i>comes up with new ideas</i>) là người giàu tính sáng tạo: <span class='highlight-green-tag'>creative</span>.", ["creative: sáng tạo", "friendly: thân thiện", "talkative: hay nói, hoạt ngôn", "patient: kiên nhẫn"]),
+      makeQ(7, "II. MULTIPLE CHOICE - Prepositions of Place (Unit 2)", "Question 7: There is a small coffee table ______ the sofa and the armchair in the living room.", ["on", "next to", "between", "under"], "C", "Dịch: Có một chiếc bàn trà nhỏ ở giữa ghế sô-pha và ghế bành trong phòng khách.", "Cấu trúc 'between A and B' (ở giữa A và B):", "Phía sau chỗ trống có cấu trúc hai vật nối bằng <b>and</b> (<i>the sofa <b>and</b> the armchair</i>), nên ta dùng giới từ chỉ vị trí ở giữa hai vật: <span class='highlight-green-tag'>between</span>.", ["on: ở trên", "next to: ở bên cạnh (chỉ đi với 1 vật)", "between ... and ...: ở giữa vật này và vật kia", "under: ở dưới"]),
+      makeQ(8, "II. MULTIPLE CHOICE - Adverbs of Frequency (Unit 1)", "Question 8: My best friend is very busy, so she ______ goes to the cinema with us.", ["always", "rarely", "usually", "often"], "B", "Dịch: Bạn thân nhất của tôi rất bận rộn, vì vậy bạn ấy hiếm khi đi xem phim cùng chúng tôi.", "Trạng từ chỉ tần suất theo ngữ cảnh:", "Vì bạn ấy **rất bận rộn** (<i>very busy</i>), nên tần suất bạn ấy đi xem phim phải là rất ít / hiếm khi: <span class='highlight-green-tag'>rarely</span>.", ["always: luôn luôn (100%)", "rarely: hiếm khi (phù hợp với lý do 'very busy')", "usually: thường xuyên (80%)", "often: thường (60%)"]),
+      makeQ(9, "II. MULTIPLE CHOICE - Present Simple", "Question 9: Phong ______ to English club every Tuesday afternoon.", ["go", "goes", "is going", "going"], "B", "Dịch: Phong đi đến câu lạc bộ Tiếng Anh vào mỗi chiều thứ Ba.", "Thì Hiện tại đơn với dấu hiệu 'every Tuesday afternoon':", "Cụm từ <b>every Tuesday afternoon</b> chỉ thói quen lặp đi lặp lại ở Hiện tại đơn. Chủ ngữ <b>Phong</b> (ngôi thứ 3 số ít) nên động từ <i>go</i> thêm đuôi <i>-es</i>: <span class='highlight-green-tag'>goes</span>.", ["go: dùng cho chủ ngữ số nhiều/I/you/we/they", "goes: chuẩn ngôi thứ 3 số ít (Phong)", "is going: hiện tại tiếp diễn", "going: thiếu to be"]),
+      makeQ(10, "II. MULTIPLE CHOICE - Appearance Adjectives (Unit 3)", "Question 10: My sister has ______ black hair and big brown eyes.", ["short", "long", "tall", "slim"], "B", "Dịch: Chị gái tôi có mái tóc đen dài (hoặc ngắn) và đôi mắt to màu nâu.", "Tính từ miêu tả mái tóc (Hair):", "Để miêu tả độ dài của mái tóc (<b>hair</b>), ta dùng <b>long</b> (dài) hoặc <b>short</b> (ngắn), không dùng <i>tall</i> hay <i>slim</i> (dùng cho vóc dáng cơ thể). *(Lưu ý: Cả A 'short' và B 'long' đều đi được với 'black hair', trên web chấp nhận cả hai hoặc ưu tiên B/A theo chuẩn miêu tả chị gái)*.", ["short black hair: tóc đen ngắn (cũng đúng ngữ pháp)", "long black hair: tóc đen dài (chuẩn miêu tả phổ biến)", "tall: cao (chỉ chiều cao người, không dùng cho tóc)", "slim: mảnh mai (chỉ vóc dáng người)"]),
+
+      /* ==================== III. ERROR IDENTIFICATION (CÂU 11 - 12) ==================== */
+      makeQ(11, "III. ERROR IDENTIFICATION - Tìm lỗi sai", "Question 11: Choose the underlined part A, B, C or D that needs correction:<br><u>Does</u> (A) your brother <u>works</u> (B) as a teacher <u>at</u> (C) a secondary school <u>in</u> (D) Ha Noi?", ["Does", "works", "at", "in"], "B", "Dịch: Anh trai của bạn có làm giáo viên tại một trường trung học cơ sở ở Hà Nội không?", "Câu nghi vấn Hiện tại đơn 'Does + S + V(nguyên thể)?':", "Khi đầu câu hỏi đã mượn trợ động từ <b>Does</b>, động từ chính phía sau bắt buộc phải đưa về dạng **nguyên thể không chia -s**: sửa <span class='highlight-green-tag'>works → work</span>.", ["Does: đúng vì your brother là số ít", "works (SAI) → phải sửa thành 'work' nguyên thể", "at a secondary school: đúng", "in Ha Noi: đúng"]),
+      makeQ(12, "III. ERROR IDENTIFICATION - Tìm lỗi sai", "Question 12: Choose the underlined part A, B, C or D that needs correction:<br>Listen! <u>The girls</u> (A) <u>is singing</u> (B) a famous song <u>in</u> (C) the <u>music room</u> (D).", ["The girls", "is singing", "in", "music room"], "B", "Dịch: Nghe kìa! Các bạn nữ đang hát một bài hát nổi tiếng ở trong phòng Âm nhạc.", "Sự hòa hợp Chủ ngữ số nhiều & Động từ to be:", "Chủ ngữ <b>The girls</b> (Các bạn nữ) là danh từ **số nhiều**, nên động từ to be ở thì Hiện tại tiếp diễn phải là <b>are</b>: sửa <span class='highlight-green-tag'>is singing → are singing</span>.", ["The girls: chủ ngữ số nhiều đúng", "is singing (SAI) → phải sửa thành 'are singing'", "in: đúng", "music room: đúng"]),
+
+      /* ==================== IV. ODD ONE OUT (CÂU 13 - 14) ==================== */
+      makeQ(13, "IV. ODD ONE OUT - Tìm từ khác nhóm", "Question 13: Choose the word A, B, C or D that does NOT belong to the same group.", ["kitchen", "living room", "stilt house", "bathroom"], "C", "Dịch: Chọn từ KHÔNG thuộc cùng nhóm với các từ còn lại.", "Phân biệt Tên các phòng trong nhà (Rooms) và Loại nhà (Types of house):", "Ba từ 'kitchen' (phòng bếp), 'living room' (phòng khách), 'bathroom' (phòng tắm) đều là **các căn phòng trong nhà**. Riêng <span class='highlight-green-tag'>stilt house</span> (nhà sàn) là **một loại hình ngôi nhà**.", ["kitchen: phòng bếp (Room)", "living room: phòng khách (Room)", "stilt house: nhà sàn (Type of house - Khác nhóm)", "bathroom: phòng tắm (Room)"]),
+      makeQ(14, "IV. ODD ONE OUT - Tìm từ khác nhóm", "Question 14: Choose the word A, B, C or D that does NOT belong to the same group.", ["clever", "friendly", "helpful", "chubby"], "D", "Dịch: Chọn từ KHÔNG thuộc cùng nhóm với các từ còn lại.", "Phân biệt Tính cách (Personality) và Ngoại hình (Appearance):", "Ba từ 'clever' (thông minh), 'friendly' (thân thiện), 'helpful' (hay giúp đỡ) đều miêu tả **tính cách (personality)**. Riêng <span class='highlight-green-tag'>chubby</span> (mũm mĩm) miêu tả **ngoại hình (appearance)**.", ["clever: thông minh (Tính cách)", "friendly: thân thiện (Tính cách)", "helpful: tốt bụng, hay giúp đỡ (Tính cách)", "chubby: mũm mĩm (Ngoại hình - Khác nhóm)"]),
+
+      /* ==================== V. TEXT INSERTION (CÂU 15 - 18) ==================== */
+      makeQ(15, "V. TEXT INSERTION - Điền câu vào đoạn văn", "Question 15 (An Son School): Choose the sentence (Option A, B, C or D) that best fits blank (15):", [
+        "Option A (They are very friendly and always help each other...)",
+        "Option B (My new school is called An Son Lower Secondary School.)",
+        "Option C (After school, we usually play football or badminton...)",
+        "Option D (There is a big library with thousands of interesting storybooks.)"
+      ], "B", "Dịch: (15) Trường mới của tôi tên là Trường THCS An Sơn. Trường nằm ở một ngôi làng yên bình được bao quanh bởi những cánh đồng lúa xanh mát.", "Câu mở đầu giới thiệu tên trường mới:", "Vị trí (15) đứng đầu đoạn văn, và câu liền sau dùng đại từ <i>'<b>It</b> is located in a quiet village...'</i> (Nó nằm ở một ngôi làng yên tĩnh). Vậy câu (15) phải giới thiệu tên ngôi trường: <span class='highlight-green-tag'>B. My new school is called An Son Lower Secondary School.</span>", ["nói về các bạn cùng lớp (điền ở 17)", "Option B: giới thiệu tên trường An Son Lower Secondary School ở đầu đoạn", "nói về hoạt động sau giờ học (điền ở 18)", "nói về thư viện (điền ở 16)"], "", "an_son_school", "an_son_school"),
+      makeQ(16, "V. TEXT INSERTION - Điền câu vào đoạn văn", "Question 16: Choose the sentence (Option A, B, C or D) that best fits blank (16):<br><i>...The school has 12 classrooms, a modern computer room, and a large garden. (16)______. I often go there during break time to read my favorite comic books.</i>", [
+        "Option A (They are very friendly and always help each other...)",
+        "Option B (My new school is called An Son Lower Secondary School.)",
+        "Option C (After school, we usually play football or badminton...)",
+        "Option D (There is a big library with thousands of interesting storybooks.)"
+      ], "D", "Dịch: Có một thư viện lớn với hàng ngàn cuốn truyện thú vị. Tôi thường đến đó vào giờ ra chơi để đọc những cuốn truyện tranh yêu thích.", "Liên kết từ khóa 'library' → 'go there ... to read comic books':", "Câu liền sau có cụm <i>'I often go <b>there</b> during break time to <b>read my favorite comic books</b>'</i> (đến đó để đọc truyện). Nơi để đọc sách truyện chính là **thư viện**: <span class='highlight-green-tag'>D. There is a big library with thousands of interesting storybooks.</span>", ["nói về bạn học", "đã điền ở 15", "nói về chơi thể thao", "Option D: giới thiệu thư viện (a big library) khớp với việc đọc truyện ở câu sau"], "", "an_son_school"),
+      makeQ(17, "V. TEXT INSERTION - Điền câu vào đoạn văn", "Question 17: Choose the sentence (Option A, B, C or D) that best fits blank (17):<br><i>...My classmates come from different hamlets in the commune. (17)______. Teachers at my school are kind and dedicated.</i>", [
+        "Option A (They are very friendly and always help each other with difficult homework.)",
+        "Option B (My new school is called An Son Lower Secondary School.)",
+        "Option C (After school, we usually play football or badminton...)",
+        "Option D (There is a big library with thousands of interesting storybooks.)"
+      ], "A", "Dịch: Các bạn cùng lớp của tôi đến từ các thôn xóm khác nhau trong xã. Các bạn ấy rất thân thiện và luôn giúp đỡ nhau làm các bài tập khó.", "Liên kết chủ ngữ 'My classmates' → 'They':", "Câu liền trước vừa nhắc đến <b>My classmates</b> (Các bạn cùng lớp của tôi). Câu (17) dùng đại từ <b>They</b> để miêu tả tính cách của các bạn ấy: <span class='highlight-green-tag'>A. They are very friendly and always help each other with difficult homework.</span>", ["Option A: miêu tả các bạn cùng lớp rất thân thiện và hay giúp đỡ nhau", "đã điền ở 15", "điền ở 18", "đã điền ở 16"], "", "an_son_school"),
+      makeQ(18, "V. TEXT INSERTION - Điền câu vào đoạn văn", "Question 18: Choose the sentence (Option A, B, C or D) that best fits blank (18):<br><i>...Teachers at my school are kind and dedicated. (18)______. I love my school very much because every school day is a happy day.</i>", [
+        "Option A (They are very friendly and always help each other...)",
+        "Option B (My new school is called An Son Lower Secondary School.)",
+        "Option C (After school, we usually play football or badminton in the playground.)",
+        "Option D (There is a big library with thousands of interesting storybooks.)"
+      ], "C", "Dịch: Sau giờ học, chúng tôi thường chơi bóng đá hoặc cầu lông ở sân trường. Tôi rất yêu ngôi trường của mình vì mỗi ngày đến trường là một ngày vui.", "Hoạt động cuối buổi học trước câu kết đoạn:", "Sau khi kể về trường lớp, giờ ra chơi, bạn bè và thầy cô, tác giả kể về hoạt động vui chơi **sau giờ học** (<span class='highlight-green-tag'>C. After school, we usually play football or badminton in the playground</span>) rồi kết bài bằng tình yêu dành cho ngôi trường.", ["đã điền ở 17", "đã điền ở 15", "Option C: hoạt động vui chơi sau giờ học (After school...)", "đã điền ở 16"], "", "an_son_school"),
+
+      /* ==================== VI. CONVERSATION ORDERING (CÂU 19 - 20) ==================== */
+      makeQ(19, "VI. CONVERSATION ORDERING - Sắp xếp hội thoại", "Question 19: Choose the letter A, B, C or D to indicate the correct arrangement of the sentences to make a meaningful conversation.", [
+        "(1) - (2) - (3) - (4)",
+        "(1) - (3) - (2) - (4)",
+        "(2) - (1) - (3) - (4)",
+        "(3) - (2) - (1) - (4)"
+      ], "A", "Dịch: Sắp xếp cuộc trò chuyện giữa Minh và Lan rủ nhau tham gia Câu lạc bộ Nói Tiếng Anh.", "Mạch hội thoại Rủ rê → Đồng ý & Hỏi giờ → Trả lời giờ → Hẹn gặp:", "1. <b>(1) Minh:</b> Thứ Bảy này tham gia CLB Nói Tiếng Anh nhé?<br>2. <b>(2) Lan:</b> Ý kiến hay đấy! Mấy giờ nó bắt đầu thế?<br>3. <b>(3) Minh:</b> Nó bắt đầu lúc 8 giờ sáng ở hội trường.<br>4. <b>(4) Lan:</b> Tuyệt! Hẹn gặp cậu ở đó nhé.<br>Thứ tự đúng: <span class='highlight-green-tag'>A. (1) - (2) - (3) - (4)</span>.", ["(1) - (2) - (3) - (4): chuẩn mạch hội thoại tự nhiên", "Minh trả lời giờ (3) trước khi Lan hỏi (2) là sai", "không bắt đầu bằng Good idea! (2)", "không bắt đầu bằng It starts at (3)"], "<b>(1) Minh:</b> How about joining the English Speaking Club this Saturday?<br><b>(2) Lan:</b> Good idea! What time does it start?<br><b>(3) Minh:</b> It starts at 8:00 a.m. in the school hall.<br><b>(4) Lan:</b> Great! I'll see you there."),
+      makeQ(20, "VI. CONVERSATION ORDERING - Sắp xếp hội thoại", "Question 20: Choose the letter A, B, C or D to indicate the correct arrangement of the sentences to make a meaningful conversation.", [
+        "(2) - (1) - (4) - (3)",
+        "(2) - (4) - (1) - (3)",
+        "(1) - (2) - (4) - (3)",
+        "(4) - (2) - (1) - (3)"
+      ], "B", "Dịch: Sắp xếp cuộc trò chuyện giữa Hoa và Mai hỏi về bạn học sinh mới tên Linh.", "Mạch hội thoại Hỏi ai → Giới thiệu tên → Miêu tả thêm → Rủ ra làm quen:", "1. <b>(2) Hoa:</b> Bạn nữ đang đứng gần cửa thư viện kia là ai thế?<br>2. <b>(4) Mai:</b> Đó là chị/em gái của Phong, tên là Linh. Bạn ấy là học sinh mới lớp 6B.<br>3. <b>(1) Mai:</b> Bạn ấy có mái tóc đen dài, đeo kính và rất tốt bụng.<br>4. <b>(3) Hoa:</b> Ồ, trông bạn ấy thân thiện thật! Chúng mình ra nói chuyện làm quen đi.<br>Thứ tự chuẩn xác nhất là <span class='highlight-green-tag'>B. (2) - (4) - (1) - (3)</span>.", ["giới thiệu tên người (4) phải đứng trước câu miêu tả She has... (1)", "(2) - (4) - (1) - (3): chuẩn trình tự hỏi - đáp tên - miêu tả - kết nối", "không mở đầu bằng She has... (1) khi chưa biết She là ai", "câu hỏi Who is that girl (2) phải đứng đầu"]),
+
+      /* ==================== VII. SIGNS AND NOTICES (CÂU 21 - 22) ==================== */
+      makeQ(21, "VII. SIGNS AND NOTICES - Đọc hiểu thông báo", "Question 21: What does this notice tell students?<br><div style='margin-top:8px; background:#FFF3CD; border:2px solid #F39C12; padding:10px 14px; border-radius:12px; text-align:center; color:#D35400; font-weight:900;'>[ LIBRARY NOTICE: SILENCE PLEASE! DO NOT BRING FOOD OR DRINKS INSIDE ]</div>", [
+        "You can eat snacks while reading books in the library.",
+        "You must keep quiet and you cannot bring food or drinks into the library.",
+        "You can buy food and drinks inside the library.",
+        "You should talk softly with your friends while eating."
+      ], "B", "Dịch: Thông báo thư viện: 'XIN VUI LÒNG GIỮ TRẬT TỰ! KHÔNG MANG ĐỒ ĂN HOẶC THỨC UỐNG VÀO BÊN TRONG' nhắc nhở học sinh điều gì?", "Giải nghĩa từ khóa 'SILENCE PLEASE' và 'DO NOT BRING...':", "• <b>SILENCE PLEASE!</b> = <i>You must keep quiet</i> (Bạn phải giữ yên lặng).<br>• <b>DO NOT BRING FOOD OR DRINKS INSIDE</b> = <i>you cannot bring food or drinks into the library</i>.<br>Đáp án đúng là <span class='highlight-green-tag'>B</span>.", ["sai vì cấm mang đồ ăn vào", "Bạn phải giữ trật tự và không được mang đồ ăn thức uống vào thư viện", "sai vì thư viện không bán đồ ăn", "sai vì không được ăn uống trong thư viện"]),
+      makeQ(22, "VII. SIGNS AND NOTICES - Đọc hiểu thông báo", "Question 22: What does this notice mean?<br><div style='margin-top:8px; background:#EBF3FA; border:2px solid #0984E3; padding:10px 14px; border-radius:12px; text-align:center; color:#0984E3; font-weight:900;'>[ NOTICE: FOOTBALL PRACTICE TODAY CANCELLED DUE TO HEAVY RAIN ]</div>", [
+        "Students will play football inside the classroom.",
+        "There is no football practice today because of bad weather.",
+        "Students must bring raincoats to play football today.",
+        "Football practice is moved to the swimming pool."
+      ], "B", "Dịch: Thông báo: 'BUỔI TẬP BÓNG ĐÁ HÔM NAY BỊ HỦY DO MƯA LỚN' có nghĩa là gì?", "Giải nghĩa từ khóa 'CANCELLED' và 'DUE TO HEAVY RAIN':", "• <b>CANCELLED</b> (bị hủy bỏ) = <i>There is no football practice today</i> (Hôm nay không có buổi tập bóng đá).<br>• <b>DUE TO HEAVY RAIN</b> (do mưa to) = <i>because of bad weather</i> (vì thời tiết xấu).<br>Đáp án chuẩn xác là <span class='highlight-green-tag'>B</span>.", ["sai thông tin", "Hôm nay không có buổi tập bóng đá vì thời tiết xấu", "sai vì buổi tập đã bị hủy (cancelled)", "sai thông tin"]),
+
+      /* ==================== VIII. GUIDED CLOZE READING (CÂU 23 - 27) ==================== */
+      makeQ(23, "VIII. GUIDED CLOZE - Động từ 'have / has'", "Question 23 (Peter's House): Our house (23)______ a small garden in front and a backyard with big trees.", ["have", "has", "is having", "are having"], "B", "Dịch: Ngôi nhà của chúng tôi có một khu vườn nhỏ ở phía trước và một sân sau với nhiều cây to.", "Chia động từ 'have/has' ở Hiện tại đơn chỉ sự sở hữu:", "Chủ ngữ <b>Our house</b> (Ngôi nhà của chúng tôi) là danh từ **số ít**, và động từ <i>have</i> khi mang nghĩa 'có/sở hữu' luôn chia ở thì Hiện tại đơn: <span class='highlight-green-tag'>has</span>.", ["have dùng cho chủ ngữ số nhiều", "has: chuẩn ngôi thứ 3 số ít (Our house)", "không chia tiếp diễn khi chỉ sự sở hữu", "sai cả số lẫn thì"], "", "peter_house", "peter_house"),
+      makeQ(24, "VIII. GUIDED CLOZE - Giới từ chỉ vị trí", "Question 24: I have a bed, a desk, a chair, and a bookshelf (24)______ my bed.", ["next to", "between", "under", "on"], "A", "Dịch: Tôi có một chiếc giường, một cái bàn học, một chiếc ghế và một giá sách ở ngay cạnh giường của tôi.", "Giới từ chỉ vị trí hợp lý trong phòng ngủ:", "Giá sách (<i>a bookshelf</i>) được đặt **bên cạnh** chiếc giường (<i>my bed</i> - 1 vật): <span class='highlight-green-tag'>next to</span> (không thể đặt giá sách ở dưới gầm giường <i>under</i> hay đè lên trên giường <i>on</i>, còn <i>between</i> phải có 2 vật).", ["next to my bed: ở bên cạnh giường của tôi", "between cần 2 đối tượng (between A and B)", "under: ở dưới gầm giường (không hợp lý với giá sách)", "on: ở trên mặt giường"], "", "peter_house"),
+      makeQ(25, "VIII. GUIDED CLOZE - Giới từ chỉ thời gian", "Question 25: I usually do my homework (25)______ the evening before going to bed.", ["at", "on", "in", "by"], "C", "Dịch: Tôi thường làm bài tập về nhà vào buổi tối trước khi đi ngủ.", "Cụm giới từ chỉ các buổi trong ngày 'in the evening':", "Với các buổi trong ngày (<i>the morning, the afternoon, the evening</i>), ta luôn dùng giới từ <span class='highlight-green-tag'>in</span> (<i>in the evening</i>).", ["at đi với giờ (at 7 p.m.) hoặc at night", "on đi với thứ/ngày (on Monday)", "in the evening: vào buổi tối", "by: trước lúc"], "", "peter_house"),
+      makeQ(26, "VIII. GUIDED CLOZE - Thì Hiện tại tiếp diễn", "Question 26: Right now, my mother is in the kitchen. She (26)______ delicious dinner for the whole family.", ["cooks", "cook", "is cooking", "are cooking"], "C", "Dịch: Ngay lúc này, mẹ tôi đang ở trong bếp. Bà đang nấu bữa tối thơm ngon cho cả gia đình.", "Dấu hiệu 'Right now' (Ngay bây giờ):", "Câu liền trước có trạng từ <b>Right now</b> (Ngay lúc này), nên hành động nấu ăn của mẹ đang diễn ra tại thời điểm nói. Chủ ngữ <b>She</b> đi với <span class='highlight-green-tag'>is cooking</span>.", ["cooks: hiện tại đơn", "cook: nguyên mẫu", "is cooking: chuẩn Hiện tại tiếp diễn với chủ ngữ She", "are cooking: dùng cho chủ ngữ số nhiều"], "", "peter_house"),
+      makeQ(27, "VIII. GUIDED CLOZE - Tính từ chỉ cảm xúc tích cực", "Question 27: I feel very happy and (27)______ to live in such a warm house.", ["peaceful", "boring", "shy", "stressful"], "A", "Dịch: Tôi cảm thấy rất hạnh phúc và bình yên khi được sống trong một ngôi nhà ấm áp như vậy.", "Tính từ mang nghĩa tích cực đi cùng 'happy':", "Nối với tính từ tích cực <b>happy</b> bởi liên từ <b>and</b> là cảm giác bình yên, êm ấm: <span class='highlight-green-tag'>peaceful</span> (3 từ còn lại đều mang nghĩa tiêu cực/rụt rè).", ["peaceful: yên bình, thanh thản", "boring: nhàm chán", "shy: rụt rè, nhút nhát", "stressful: căng thẳng"], "", "peter_house"),
+
+      /* ==================== IX. READING COMPREHENSION (CÂU 28 - 32) ==================== */
+      makeQ(28, "IX. READING COMPREHENSION - Chủ đề chính", "Question 28 (Greenwood School): What is the main topic of the passage?", [
+        "A famous day school in London",
+        "Greenwood Boarding School and a student's life there",
+        "How to play football in a school team",
+        "The rules of an international examination"
+      ], "B", "Dịch: Chủ đề chính của bài đọc là gì?", "Tổng hợp nội dung 3 đoạn văn:", "• Đoạn 1 & 2 giới thiệu về trường nội trú **Greenwood Boarding School** và một ngày học tập, sinh hoạt tại đây.<br>• Đoạn 3 kể về người bạn thân **Tom** - một học sinh đang theo học tại trường.<br>Do đó chủ đề chính xác nhất là <span class='highlight-green-tag'>B. Greenwood Boarding School and a student's life there</span>.", ["sai vì đây là trường nội trú (boarding school) ở vùng quê gần London", "Trường nội trú Greenwood và cuộc sống của một học sinh ở đó", "chỉ là 1 chi tiết nhỏ ở đoạn 3", "không có trong bài"], "", "greenwood_school", "greenwood_school"),
+      makeQ(29, "IX. READING COMPREHENSION - Câu hỏi chi tiết", "Question 29: Where is Greenwood Boarding School located?", [
+        "In the center of London",
+        "In a noisy city",
+        "In the countryside near London",
+        "Near a big shopping mall"
+      ], "C", "Dịch: Trường nội trú Greenwood nằm ở đâu?", "Dẫn chứng trực tiếp từ Đoạn 1:", "Câu thứ 2 của Đoạn 1 viết: <i>'<b>It is situated in the countryside near London</b>, surrounded by beautiful hills and forests.'</i> → Đáp án đúng là <span class='highlight-green-tag'>C. In the countryside near London</span>.", ["sai vì bài nói gần London chứ không phải trung tâm London", "sai vì trường nằm ở vùng quê yên bình", "Ở vùng nông thôn gần Luân Đôn (khớp 100% đoạn 1)", "không có trong bài"], "", "greenwood_school"),
+      makeQ(30, "IX. READING COMPREHENSION - Từ đồng nghĩa", "Question 30: The word \"<u>bright</u>\" in paragraph 2 is closest in meaning to:", [
+        "dark and small",
+        "light and clear",
+        "old and dirty",
+        "cold and empty"
+      ], "B", "Dịch: Từ \"bright\" (sáng sủa) ở đoạn 2 gần nghĩa nhất với cụm từ nào?", "Từ đồng nghĩa 'bright = light and clear':", "Trong câu: <i>'The classrooms are modern and <b>bright</b>...'</i> (Các phòng học hiện đại và sáng sủa), từ <b>bright</b> đồng nghĩa với <span class='highlight-green-tag'>light and clear</span> (nhiều ánh sáng và thoáng đãng).", ["tối và nhỏ (trái nghĩa)", "light and clear: sáng sủa và thoáng đãng (= bright)", "cũ và bẩn", "lạnh và trống trải"], "", "greenwood_school"),
+      makeQ(31, "IX. READING COMPREHENSION - Miêu tả ngoại hình", "Question 31: What does Tom look like?", [
+        "He is short and fat with brown hair.",
+        "He is tall and slim with short blonde hair and blue eyes.",
+        "He is medium height with long black hair.",
+        "He wears glasses and has dark eyes."
+      ], "B", "Dịch: Ngoại hình của Tom trông như thế nào?", "Dẫn chứng trực tiếp từ Đoạn 3:", "Câu thứ 2 của Đoạn 3 viết: <i>'<b>He is tall and slim with short blonde hair and bright blue eyes.</b>'</i> (Cậu ấy cao và mảnh khảnh với mái tóc vàng ngắn và đôi mắt xanh sáng). Đáp án đúng là <span class='highlight-green-tag'>B</span>.", ["sai thông tin", "Cao, mảnh khảnh, tóc vàng ngắn và mắt xanh (khớp 100% đoạn 3)", "sai thông tin", "sai thông tin"], "", "greenwood_school"),
+      makeQ(32, "IX. READING COMPREHENSION - Nhận định KHÔNG ĐÚNG", "Question 32: Which of the following statements is NOT TRUE according to the text?", [
+        "Students at Greenwood live and study together during weekdays.",
+        "Lessons begin at 8:00 a.m. after exercise and breakfast.",
+        "Tom is lazy and rarely helps his classmates.",
+        "Living at a boarding school helps Tom become independent."
+      ], "C", "Dịch: Nhận định nào sau đây là KHÔNG ĐÚNG theo bài đọc?", "Đối chiếu thông tin Đoạn 3:", "Đoạn 3 viết: <i>'<b>Tom is very active and hard-working... and always helps his classmates</b> when they face difficult exercises.'</i> (Tom rất năng động, chăm chỉ và luôn giúp đỡ bạn bè). Vì vậy câu nói Tom lười biếng và hiếm khi giúp bạn (<span class='highlight-green-tag'>C. Tom is lazy and rarely helps his classmates</span>) là hoàn toàn **SAI**.", ["đúng theo đoạn 1", "đúng theo đoạn 2", "SAI vì trong bài Tom rất chăm chỉ (hard-working) và luôn giúp đỡ bạn (always helps)", "đúng theo câu cuối đoạn 3"], "", "greenwood_school"),
+
+      /* ==================== X. SENTENCE BUILDING (CÂU 33 - 36) ==================== */
+      makeQ(33, "X. SENTENCE BUILDING - Dựng câu từ từ gợi ý", "Question 33: Choose the sentence A, B, C or D that is best built from the given words/cues:<br><b>Look! / the boys / play / football / in / school yard / right now.</b>", [
+        "Look! The boys play football in the school yard right now.",
+        "Look! The boys are playing football in the school yard right now.",
+        "Look! The boys is playing football in the school yard right now.",
+        "Look! The boys plays football in the school yard right now."
+      ], "B", "Dịch: Nhìn kìa! Các bạn nam đang chơi bóng đá ở ngoài sân trường ngay lúc này.", "Thì Hiện tại tiếp diễn với 'Look!' và 'right now':", "Có 2 dấu hiệu Hiện tại tiếp diễn rõ rệt là <b>Look!</b> và <b>right now</b>. Chủ ngữ số nhiều <b>The boys</b> đi với <b>are playing</b> và thêm mạo từ <b>the</b> trước <i>school yard</i>: <span class='highlight-green-tag'>B. Look! The boys are playing football in the school yard right now.</span>", ["chưa chia thì Hiện tại tiếp diễn", "chuẩn ngữ pháp 100%", "The boys là số nhiều không dùng 'is'", "sai cả thì lẫn chia động từ"]),
+      makeQ(34, "X. SENTENCE BUILDING - Dựng câu từ từ gợi ý", "Question 34: Choose the sentence A, B, C or D that is best built from the given words/cues:<br><b>My sister / usually / do / her homework / library / after school.</b>", [
+        "My sister usually does her homework in the library after school.",
+        "My sister usually do her homework in the library after school.",
+        "My sister does usually her homework in library after school.",
+        "My sister is usually doing her homework in library after school."
+      ], "A", "Dịch: Chị gái của tôi thường làm bài tập về nhà ở trong thư viện sau giờ học.", "Thì Hiện tại đơn & Vị trí trạng từ chỉ tần suất 'usually':", "1. Trạng từ tần suất <b>usually</b> đứng trước động từ thường.<br>2. Chủ ngữ <b>My sister</b> (ngôi thứ 3 số ít) nên động từ <i>do</i> chia thành <b>does</b>.<br>3. Cụm trạng ngữ chỉ nơi chốn: <b>in the library</b>.<br>Đáp án chuẩn là <span class='highlight-green-tag'>A</span>.", ["chuẩn ngữ pháp 100%", "chưa chia động từ 'do' thành 'does'", "đặt usually sau động từ thường does là sai vị trí", "dùng hiện tại tiếp diễn cho thói quen thường ngày là sai"]),
+      makeQ(35, "X. SENTENCE BUILDING - Dựng câu hỏi", "Question 35: Choose the sentence A, B, C or D that is best built from the given words/cues:<br><b>How often / your father / go / jogging / in / morning / ?</b>", [
+        "How often your father goes jogging in the morning?",
+        "How often does your father go jogging in the morning?",
+        "How often do your father go jogging in the morning?",
+        "How often is your father go jogging in the morning?"
+      ], "B", "Dịch: Bố của bạn có thường xuyên đi bộ thể dục vào buổi sáng không?", "Cấu trúc câu hỏi Hiện tại đơn 'How often + does + S + V(nguyên thể)?':", "Chủ ngữ <b>your father</b> là ngôi thứ 3 số ít, và có động từ thường <b>go jogging</b>, nên ta phải mượn trợ động từ <b>does</b> đảo lên trước chủ ngữ: <span class='highlight-green-tag'>B. How often does your father go jogging in the morning?</span>", ["thiếu trợ động từ 'does' trong câu hỏi", "chuẩn cấu trúc câu hỏi Hiện tại đơn", "your father là số ít không dùng 'do'", "không dùng to be 'is' với động từ nguyên mẫu 'go'"]),
+      makeQ(36, "X. SENTENCE BUILDING - Cấu trúc There is / There are", "Question 36: Choose the sentence A, B, C or D that is best built from the given words/cues:<br><b>There / be / a big sofa / and / two armchairs / living room.</b>", [
+        "There is a big sofa and two armchairs in the living room.",
+        "There are a big sofa and two armchairs in the living room.",
+        "There have a big sofa and two armchairs in the living room.",
+        "There be a big sofa and two armchairs in the living room."
+      ], "A", "Dịch: Có một chiếc ghế sô-pha lớn và hai chiếc ghế bành ở trong phòng khách.", "Quy tắc hòa hợp gần nhất với 'There is / There are':", "Khi liệt kê nhiều danh từ sau <b>There be</b>, động từ to be chia theo **danh từ đứng ngay sát sau nó**. Vì danh từ đầu tiên là <b>a big sofa</b> (danh từ số ít) nên ta chia <span class='highlight-green-tag'>There is a big sofa and two armchairs in the living room.</span>", ["There is a big sofa...: chuẩn quy tắc hòa hợp với danh từ số ít đứng ngay sau (a big sofa)", "không dùng are trước cụm số ít 'a big sofa'", "không tồn tại cấu trúc There have", "chưa chia động từ to be"]),
+
+      /* ==================== XI. SENTENCE TRANSFORMATIONS (CÂU 37 - 40) ==================== */
+      makeQ(37, "XI. SENTENCE TRANSFORMATIONS - Viết lại câu tương đương", "Question 37: Choose the sentence A, B, C or D that is closest in meaning to the original sentence:<br><b>Our house has six rooms.</b>", [
+        "There are six rooms in our house.",
+        "There is six rooms in our house.",
+        "There have six rooms in our house.",
+        "There has six rooms in our house."
+      ], "A", "Dịch: Ngôi nhà của chúng tôi có 6 phòng.<br>→ Có 6 phòng ở trong ngôi nhà của chúng tôi.", "Chuyển đổi 'S + have/has + N' ↔ 'There is/are + N + in + S':", "Danh từ <b>six rooms</b> (6 căn phòng) là danh từ **số nhiều**, nên khi chuyển sang cấu trúc <i>There be</i> ta dùng <span class='highlight-green-tag'>There are six rooms in our house.</span>", ["There are six rooms in our house: chuẩn ngữ pháp", "six rooms là số nhiều không dùng There is", "không dùng There have", "không dùng There has"]),
+      makeQ(38, "XI. SENTENCE TRANSFORMATIONS - Giới từ chỉ vị trí đối lập", "Question 38: Choose the sentence A, B, C or D that is closest in meaning to the original sentence:<br><b>The lamp is behind the computer.</b>", [
+        "The computer is behind the lamp.",
+        "The computer is in front of the lamp.",
+        "The computer is next to the lamp.",
+        "The lamp is in front of the computer."
+      ], "B", "Dịch: Chiếc đèn bàn ở phía sau máy tính.<br>→ Máy tính ở phía trước chiếc đèn bàn.", "Cặp giới từ vị trí ngược chiều 'A is behind B' ↔ 'B is in front of A':", "Nếu chiếc đèn ở **phía sau** máy tính (<i>behind</i>), thì suy ra chiếc máy tính nằm ở **phía trước** chiếc đèn (<i>in front of</i>): <span class='highlight-green-tag'>B. The computer is in front of the lamp.</span>", ["ngược vị trí", "The computer is in front of the lamp: chuẩn xác tuyệt đối", "next to là bên cạnh (sai vị trí)", "ngược vị trí với câu gốc"]),
+      makeQ(39, "XI. SENTENCE TRANSFORMATIONS - Câu đề nghị / rủ rê", "Question 39: Choose the sentence A, B, C or D that is closest in meaning to the original sentence:<br><b>Let's go to the school canteen to buy some drinks.</b>", [
+        "How about go to the school canteen to buy some drinks?",
+        "How about going to the school canteen to buy some drinks?",
+        "How about to go to the school canteen to buy some drinks?",
+        "How about we going to the school canteen to buy some drinks?"
+      ], "B", "Dịch: Chúng mình hãy xuống căng-tin trường để mua chút đồ uống đi.<br>→ Thế còn việc xuống căng-tin trường mua chút đồ uống thì sao nhỉ?", "Chuyển đổi 'Let's + V(nguyên thể)' ↔ 'How about / What about + V-ing?':", "Sau cấu trúc rủ rê <b>How about</b> (giới từ <i>about</i>), động từ bắt buộc phải thêm đuôi **-ing**: <span class='highlight-green-tag'>B. How about going to the school canteen to buy some drinks?</span>", ["sau How about không dùng động từ nguyên mẫu 'go'", "How about + V-ing (going): chuẩn cấu trúc 100%", "sau How about không dùng to-V", "sai cấu trúc"]),
+      makeQ(40, "XI. SENTENCE TRANSFORMATIONS - Miêu tả ngoại hình (Have/Has ↔ Be)", "Question 40: Choose the sentence A, B, C or D that is closest in meaning to the original sentence:<br><b>Mai has short black hair and blue eyes.</b>", [
+        "Mai's hair is short and black, and her eyes are blue.",
+        "Mai's hair are short and black, and her eyes is blue.",
+        "Mai's hair is short black, and her eyes are blue.",
+        "Mai's hair is blue, and her eyes are short black."
+      ], "A", "Dịch: Mai có mái tóc đen ngắn và đôi mắt màu xanh.<br>→ Tóc của Mai thì ngắn và đen, còn đôi mắt của bạn ấy thì màu xanh.", "Quy tắc chia động từ to be với 'hair' (không đếm được) và 'eyes' (số nhiều):", "1. Danh từ <b>hair</b> (mái tóc) là danh từ **không đếm được** nên luôn đi với động từ số ít <b>is</b>, và hai tính từ đứng sau to be được nối bằng liên từ <i>and</i>: <b>Mai's hair is short and black</b>.<br>2. Danh từ <b>eyes</b> (đôi mắt) là danh từ **số nhiều** nên đi với động từ <b>are</b>: <b>and her eyes are blue</b>.<br>Đáp án chuẩn xác là <span class='highlight-green-tag'>A</span>.", ["Mai's hair is short and black, and her eyes are blue: chuẩn ngữ pháp 100%", "sai động từ to be ở cả 2 vế (hair không đi với are, eyes không đi với is)", "khi 2 tính từ đứng sau to be 'is' làm vị ngữ thì cần có liên từ 'and' (short and black)", "lẫn lộn màu mắt sang tóc và ngược lại"])
+    ];
+
+    const userAnswers = {};
+
+    function togglePassageView(qId) {
+      const el = document.getElementById('collapse_pass_' + qId);
+      const btn = document.getElementById('btn_toggle_' + qId);
+      if (el) {
+        if (el.style.display === 'block') {
+          el.style.display = 'none';
+          if (btn) btn.innerHTML = '📖 Xem lại đoạn văn bài đọc';
+        } else {
+          el.style.display = 'block';
+          if (btn) btn.innerHTML = '▲ Thu gọn đoạn văn bài đọc';
+        }
+      }
+    }
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      quizData.forEach((q) => {
+        if (q.is_first_in_passage && passagesData[q.is_first_in_passage]) {
+          const pass = passagesData[q.is_first_in_passage];
+          const passCard = document.createElement('div');
+          passCard.className = 'reading-passage-card';
+          passCard.id = 'passage_anchor_' + q.is_first_in_passage;
+          passCard.innerHTML = `
+            <div class="passage-header-top">
+              <div class="passage-title-badge">
+                <span>📖</span>
+                <span>${pass.title}</span>
+              </div>
+              <span class="passage-scope-badge">${pass.badge}</span>
+            </div>
+            <div class="passage-intro-text">
+              📌 ${pass.intro}
+            </div>
+            ${pass.content}
+            <div class="passage-prompt-banner">
+              <span>👉</span>
+              <span>Đọc kỹ đoạn văn phía trên và lần lượt chọn đáp án cho các câu hỏi theo thứ tự bên dưới:</span>
+            </div>
+          `;
+          container.appendChild(passCard);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qCard_${q.id}`;
+
+        let quickPassageHtml = '';
+        if (q.passage_key && passagesData[q.passage_key]) {
+          quickPassageHtml = `
+            <div>
+              <button class="btn-toggle-passage" id="btn_toggle_${q.id}" onclick="togglePassageView(${q.id})">
+                📖 Xem lại đoạn văn bài đọc
+              </button>
+              <div class="collapse-passage-box" id="collapse_pass_${q.id}">
+                <div style="font-weight:900; color:#D35400; margin-bottom:8px;">📖 ${passagesData[q.passage_key].title}:</div>
+                ${passagesData[q.passage_key].content}
+              </div>
+            </div>
+          `;
+        }
+
+        let optionsHtml = '';
+        q.options.forEach(opt => {
+          optionsHtml += `
+            <button class="option-btn" id="opt_${q.id}_${opt.key}" onclick="handleSelect(${q.id}, '${opt.key}')">
+              <span class="opt-key">${opt.key}</span>
+              <span class="opt-text">${opt.text}</span>
+            </button>
+          `;
+        });
+
+        let cardsHtml = '';
+        q.analysis.forEach(item => {
+          const isCorrect = item.badgeType === 'correct';
+          cardsHtml += `
+            <div class="exp-card-item">
+              <div class="exp-card-header">
+                <span class="card-word ${isCorrect ? 'word-correct' : 'word-wrong'}">${item.word}</span>
+                <span class="badge-pill ${isCorrect ? 'badge-pill-correct' : 'badge-pill-wrong'}">${item.badge}</span>
+              </div>
+              <div class="card-meaning">${item.note}</div>
+            </div>
+          `;
+        });
+
+        let whyWrongHtml = '';
+        q.whyWrong.forEach(item => {
+          whyWrongHtml += `
+            <div style="margin-bottom: 6px;">
+              <span class="wrong-key-pill">${item.word}</span> – ${item.reason}
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="q-number-pill">Câu ${q.id} / 40</span>
+            <span class="q-tag-pill">${q.type}</span>
+          </div>
+          <div class="q-text">
+            ${q.question}
+            ${q.subtext ? `<div style="margin-top: 8px; color: #333; background: #F8F9FA; padding: 10px 14px; border-radius: 12px; border-left: 4px solid #0984E3;">${q.subtext}</div>` : ''}
+          </div>
+          ${quickPassageHtml}
+          <div class="options-grid ${q.options.length === 4 ? 'grid-2col' : ''}">
+            ${optionsHtml}
+          </div>
+
+          <div class="explanation-container" id="exp_${q.id}">
+            <div class="exp-title-row">
+              <span>⚡ GIẢI THÍCH CHI TIẾT</span>
+            </div>
+            <div class="exp-trans-box">
+              <span style="font-size: 1.2rem;">💬</span>
+              <div>${q.trans}</div>
+            </div>
+            <div class="exp-section-title">
+              <span>1. Phân tích 4 đáp án:</span>
+            </div>
+            <div class="exp-grid-cards">
+              ${cardsHtml}
+            </div>
+            <div class="exp-block">
+              <div style="font-weight: 900; color: #00BA66; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span>2. ✅ TẠI SAO ĐÚNG?</span>
+                <span class="rule-tag">${q.whyCorrect.rule}</span>
+              </div>
+              <div style="color: #2D3436; padding-left: 22px;">
+                ${q.whyCorrect.content}
+              </div>
+            </div>
+            <div class="exp-block" style="margin-bottom: 0;">
+              <div style="font-weight: 900; color: #FF4757; margin-bottom: 4px;">
+                <span>3. ❌ TẠI SAO SAI?</span>
+              </div>
+              <div style="color: #4A4A4A; padding-left: 22px;">
+                ${whyWrongHtml}
+              </div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelect(questionId, selectedKey) {
+      const q = quizData.find(item => item.id === questionId);
+      if (!q) return;
+
+      userAnswers[questionId] = selectedKey;
+      const isCorrect = selectedKey === q.correct;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`opt_${q.id}_${opt.key}`);
+        if (!btn) return;
+        btn.classList.remove('selected-correct', 'selected-wrong', 'show-truth');
+
+        if (opt.key === selectedKey) {
+          btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+        } else if (opt.key === q.correct) {
+          btn.classList.add('show-truth');
+        }
+      });
+
+      if (isCorrect) {
+        playDing();
+        triggerConfetti(45);
+      } else {
+        playWrongSound();
+      }
+
+      const expBox = document.getElementById(`exp_${q.id}`);
+      if (expBox) expBox.style.display = 'block';
+
+      updateTopStats();
+    }
+
+    function updateTopStats() {
+      let correct = 0;
+      let totalAnswered = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] !== undefined) {
+          totalAnswered++;
+          if (userAnswers[q.id] === q.correct) correct++;
+        }
+      });
+
+      document.getElementById('correctScore').textContent = correct;
+      document.getElementById('answeredCount').textContent = totalAnswered;
+
+      const pct = (totalAnswered / quizData.length) * 100;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+    }
+
+    function calculateAndShowResult() {
+      let correct = 0;
+      const total = quizData.length;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.correct) correct++;
+      });
+
+      const percentage = Math.round((correct / total) * 100);
+      document.getElementById('modalPercent').textContent = `${percentage}%`;
+      document.getElementById('modalFraction').textContent = `Đúng ${correct} / ${total} câu`;
+
+      const teacherQuoteEl = document.getElementById('modalTeacherQuote');
+      const trophyEl = document.getElementById('modalTrophy');
+
+      if (percentage < 50) {
+        trophyEl.textContent = '🌱';
+        teacherQuoteEl.textContent = '“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else if (percentage >= 50 && percentage < 90) {
+        trophyEl.textContent = '🌟';
+        teacherQuoteEl.textContent = '“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else {
+        trophyEl.textContent = '🏆';
+        teacherQuoteEl.textContent = '“Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!”';
+        triggerConfetti(120);
+      }
+
+      document.getElementById('scoreModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('scoreModal').classList.remove('active');
+    }
+
+    function restartQuiz() {
+      for (const k in userAnswers) delete userAnswers[k];
+      closeModal();
+      renderQuiz();
+      updateTopStats();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initAppNow() {
+      initBackgroundElements();
+      renderQuiz();
+      updateTopStats();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAppNow);
+    } else {
+      initAppNow();
+    }
+  </script>
+</body>
+</html>
